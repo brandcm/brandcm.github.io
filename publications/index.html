@@ -17,6 +17,27 @@ group: publications
         	<div class="col-sm-6">
         		<img class = "img-fluid" src = "{{publication.image}}" alt = "Key Figure" style="max-height: 200px;">
         	</div>
+        	<ul class="col-sm-6">
+        			<strong>Access the paper</strong>
+        			<!--PMID-->
+        			{% if publication.pmid %}
+        			<li>PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{publication.pmid}}" alt = "pubmed link: {{publication.pmid}}"> {{publication.pmid}}</a></li>
+        			{% endif %}
+        			
+        		<!-- Article Link -->
+                {% if publication.link %}
+        		<li><a href="{{publication.link}}" alt = "article_link"> Article Link</a></li>
+                {% endif %}
+
+        			<!--Biorxiv - optional -->
+        			{% if publication.biorxiv %}
+        			<li>Biorxiv Preprint: <a href="http://dx.doi.org/10.1101/{{publication.biorxiv}}" alt = "biorxiv preprint link: {{publication.biorxiv}}"> {{publication.biorxiv | split: "." | last }}</a></li>
+        			{% endif %}
+        			
+        			 <!--Code - optional -->
+        			{% if publication.code %}
+        			<li>Code: <a href="{{publication.code}}" alt = "code: {{publication.code}}"> {{publication.code}}</a></li>
+        			{% endif %}
     </div>
-	<br>
+<br>
 {% endfor %}

@@ -1,5 +1,4 @@
 ---
-title: Colin M. Brand
 layout: home
 group: home
 ---
