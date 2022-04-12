@@ -4,5 +4,5 @@ title: "Estimating *Pan* evolutionary history from nucleotide site patterns"
 authors: "**Brand CM**, White FJ, Rogers AR, Webster TW"
 journal: "Proceedings of the National Academy of Sciences"
 pub_date: "2022"
-image: "images/pubs/2022b_Brand.pdf"
+image: "/images/pubs/2022b_Brand.pdf"
 ---
