@@ -23,10 +23,10 @@ group: publications
         			<li>PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{publication.pmid}}" alt = "pubmed link: {{publication.pmid}}"> {{publication.pmid}}</a></li>
         			{% endif %}
         			
-        		<!-- Article Link -->
-                {% if publication.link %}
-        		<li><a href="{{publication.link}}" alt = "article_link"> Article Link</a></li>
-                {% endif %}
+        			<!-- Article Link -->
+                	{% if publication.link %}
+        			<li><a href="{{publication.link}}" alt = "article_link"> Article Link</a></li>
+               		 {% endif %}
 
         			<!--Biorxiv - optional -->
         			{% if publication.biorxiv %}
@@ -38,6 +38,6 @@ group: publications
         			<li>Code: <a href="{{publication.code}}" alt = "code: {{publication.code}}"> {{publication.code}}</a></li>
         			{% endif %}
         	</ul>
-    </div>
-<br>
+    	</div>
+	<br>
 {% endfor %}
