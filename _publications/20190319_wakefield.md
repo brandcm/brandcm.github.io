@@ -5,5 +5,5 @@ authors: "Wakefield ML, Hickmott AJ, **Brand CM**, Takaoka IY, Meador LM, Waller
 journal: "Folia Primatologica"
 pub_date: "2019-03-19"
 pmid: "30889597"
-image: "/images/pubs/2019_Wakefield.jpg"
+image: "/images/pubs/2019_wakefield.jpg"
 ---

@@ -5,5 +5,5 @@ authors: "White FJ, **Brand CM**, Hickmott AJ, Minton IR"
 journal: "Journal of Anthropological Sciences"
 pub_date: "2020"
 pmid: "33341755"
-image: "/images/pubs/2020_White.jpg"
+image: "/images/pubs/2020_white.jpg"
 ---
