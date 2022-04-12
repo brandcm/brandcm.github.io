@@ -18,7 +18,6 @@ group: publications
         		<img class = "img-fluid" src = "{{publication.image}}" alt = "Key Figure" style="max-height: 200px;">
         	</div>
         	<ul class="col-sm-6">
-        			<strong>Access the paper</strong>
         			<!--PMID-->
         			{% if publication.pmid %}
         			<li>PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{publication.pmid}}" alt = "pubmed link: {{publication.pmid}}"> {{publication.pmid}}</a></li>
@@ -38,6 +37,7 @@ group: publications
         			{% if publication.code %}
         			<li>Code: <a href="{{publication.code}}" alt = "code: {{publication.code}}"> {{publication.code}}</a></li>
         			{% endif %}
+        	</ul>
     </div>
 <br>
 {% endfor %}
