@@ -11,13 +11,16 @@ group: publications
 <hr>
 <br>
 <div class="row" style="padding-top: 60px; margin-top: -60px;" id="{{publication.pmid}}">
-<div style="font-size: 120% !important; width: 100%">{{ publication.citation | markdownify }}</div>
-</div>
+	<div>
+		<h5>{{ publication.citation | markdownify  | remove: '<p>' | remove: '</p>' }}</h5>
+	</div>
+</div>	
+
 <div class="row" style="padding-top: 20px; margin-top: - 20px;">
     <div class="col-sm-6">
     	<img class = "img-fluid" src = "{{publication.image}}" alt = "Key Figure" style="max-height: 200px;">
-    	</div>
-        <ul class="col-sm-6">
+    </div>
+    <ul class="col-sm-6">
         		<!--PMID-->
         		{% if publication.pmid %}
         		<li>PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{publication.pmid}}" alt = "pubmed link: {{publication.pmid}}"> {{publication.pmid}}</a></li>
