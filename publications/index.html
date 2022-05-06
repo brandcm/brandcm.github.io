@@ -9,7 +9,6 @@ group: publications
 
 {% for publication in site.publications reversed | sort: "pub_date" %}
 <hr>
-<br>
 <div class="row" style="padding-top: 60px; margin-top: -60px;" id="{{publication.pmid}}">
 	<div>
 		<h3>{{ publication.citation | markdownify  | remove: '<p>' | remove: '</p>' }}</h3>
