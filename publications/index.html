@@ -7,40 +7,54 @@ group: publications
 <h1>Publications</h1>
 <div class="container-fluid">
 
+
 {% for publication in site.publications reversed | sort: "pub_date" %}
 <hr>
 <div class="row" style="padding-top: 60px; margin-top: -60px;" id="{{publication.pmid}}">
 	<div>
-		<h3>{{ publication.citation | markdownify  | remove: '<p>' | remove: '</p>' }}</h3>
+		<h5>{{ publication.title | markdownify  | remove: '<p>' | remove: '</p>' }}</h5>
+		<h6>{{ publication.authors | markdownify | remove: '<p>' | remove: '</p>' }}</h6>
+		{% if publication.journal %}
+			<i>{{ publication.journal }},</i>
+			{{publication.pub_date | split: "-" | first }}
+		{% else %}
+			<i>Biorxiv,</i>
+			{% if publication.biorxiv %}
+				{{publication.biorxiv | split: "." | first }}
+			{% else %}
+				{{publication.biorxiv_version | split: "." | first }}
+			{% endif %}
+		{% endif %}
 	</div>
-</div>	
+</div>
 
-<div class="row" style="padding-top: 20px; margin-top: - 20px;">
+<div class="row" style="padding-top: 20px; margin-top: -20px;">
     <div class="col-sm-6">
     	<img class = "img-fluid" src = "{{publication.image}}" alt = "Key Figure" style="max-height: 200px;">
     </div>
     <ul class="col-sm-6">
     	<br>
-        	<!--PMID-->
-        	{% if publication.pmid %}
-        	<li>PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{publication.pmid}}" alt = "pubmed link: {{publication.pmid}}"> {{publication.pmid}}</a></li>
-        	{% endif %}
-        			
-        	<!-- Article Link -->
-        	{% if publication.link %}
-        	<li><a href="{{publication.link}}" alt = "article_link"> Article Link</a></li>
-            {% endif %}
+        <!--PMID-->
+        {% if publication.pmid %}
+        <li>PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/{{publication.pmid}}" alt = "pubmed link: {{publication.pmid}}"> {{publication.pmid}}</a></li>
+        {% endif %}
+        		
+        <!-- Article Link -->
+        {% if publication.link %}
+        <li><a href="{{publication.link}}" alt = "article_link"> Article Link</a></li>
+        {% endif %}
 
-        	<!--Biorxiv - optional -->
-        	{% if publication.biorxiv %}
-        	<li>Biorxiv Preprint: <a href="http://dx.doi.org/10.1101/{{publication.biorxiv}}" alt = "biorxiv preprint link: {{publication.biorxiv}}"> {{publication.biorxiv | split: "." | last }}</a></li>
-        	{% endif %}
+        <!--Biorxiv - optional -->
+        {% if publication.biorxiv %}
+        <li>Biorxiv Preprint: <a href="http://dx.doi.org/10.1101/{{publication.biorxiv}}" alt = "biorxiv preprint link: {{publication.biorxiv}}"> {{publication.biorxiv | split: "." | last }}</a></li>
+        {% endif %}
         			
-        	<!--Code - optional -->
-        	{% if publication.code %}
-        	<li>Code: <a href="{{publication.code}}" alt = "code: {{publication.code}}"> {{publication.code}}</a></li>
-        	{% endif %}
-        </ul>
+        <!--Code - optional -->
+        {% if publication.code %}
+        <li>Code: <a href="{{publication.code}}" alt = "code: {{publication.code}}"> {{publication.code}}</a></li>
+        {% endif %}
+    </ul>
 </div>
 <br>
 {% endfor %}
+</div>
