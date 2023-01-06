@@ -1,0 +1,69 @@
+---
+layout: base
+description: Publications page layout.
+---
+
+<h3>Preprints</h3>
+{% for preprint in site.preprints reversed | sort: "pub_date" %}
+<div class="container-fluid">	
+	<div class="row">
+		<div class="col-lg-3">
+			<img class = "img-fluid" src = "{{preprint.image}}" alt = "Key Figure" style="max-height:200px; max-width: 200px; height=auto; width=auto;">
+		</div>
+		<div class="col-lg-9">
+			<h6>{{ preprint.citation | markdownify | remove: '<p>' | remove: '</p>' }}</h6>
+			<a href="{{preprint.url}}" alt = "article_URL" class="btn btn-outline-secondary btn-sm"> Link to Paper</a>
+			&nbsp
+			&nbsp
+			&nbsp
+			{% if preprint.code %}
+			<a href="{{preprint.code}}" alt = "article_code" class="btn btn-outline-info btn-sm"> Code</a>
+			&nbsp
+			&nbsp
+			&nbsp
+			{% endif %}
+			{% if preprint.data %}
+			<a href="{{preprint.data}}" alt = "article_data" class="btn btn-outline-success btn-sm"> Data</a>
+			{% endif %}
+		</div>
+	<div class="row">
+		&nbsp
+	</div>
+	{% endfor %}
+	</div>
+</div>
+
+<h3>Peer-Reviewed Publications</h3>
+		
+{% for publication in site.publications reversed | sort: "pub_date" %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3">
+			<img class = "img-fluid" src = "{{publication.image}}" alt = "Key Figure" style="max-height:200px; max-width: 200px; height=auto; width=auto;">
+		</div>
+		<div class="col-lg-9">
+			<h6>{{ publication.citation | markdownify | remove: '<p>' | remove: '</p>' }}</h6>
+			<a href="{{publication.pdf}}" alt = "article_PDF" class="btn btn-outline-primary btn-sm"> Article PDF</a>
+			&nbsp
+			&nbsp
+			&nbsp
+			<a href="{{publication.url}}" alt = "article_URL" class="btn btn-outline-secondary btn-sm"> Link to Paper</a>
+			&nbsp
+			&nbsp
+			&nbsp
+			{% if publication.code %}
+			<a href="{{publication.code}}" alt = "article_code" class="btn btn-outline-info btn-sm"> Code</a>
+			&nbsp
+			&nbsp
+			&nbsp
+			{% endif %}
+			{% if publication.data %}
+			<a href="{{publication.data}}" alt = "article_data" class="btn btn-outline-success btn-sm"> Data</a>
+			{% endif %}
+		</div>
+	<div class="row">
+		&nbsp
+	</div>
+	{% endfor %}
+	</div>
+</div>

@@ -17,7 +17,9 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+font: Arial
 
+title: Colin M. Brand
 url: https://brandcm.github.io
 domain: brandcm.github.io
 twitter_username: colinmbrand
@@ -26,8 +28,17 @@ github_username:  brandcm
 # Build settings
 #theme: minima
 remote_theme: peterdesmet/petridish@2.0
+font_serif: false
+markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-stemap
+  
+collections:
+    preprints:
+        output: true
+    publications:
+        output: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
