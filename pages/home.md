@@ -12,4 +12,4 @@ My research philosophy is grounded in collaboration, equity, and transparency. I
 
 A more detailed description of my research program can be found on the Research page and a list of publications with access to the articles, code, and data can be found on the Publications page. My current CV is linked below. Please do not hesitate to get in touch via email, colin.brand@ucsf.edu, or using the links in the footer.
 
-**Current CV**: [Brand Curriculum Vitae](https://github.com/brandcm/brandcm.github.io/files/curriculum_vitae.pdf) 
+**Current CV**: [Brand Curriculum Vitae](https://github.com/brandcm/brandcm.github.io/blob/gh-pages/files/curriculum_vitae.pdf) 
